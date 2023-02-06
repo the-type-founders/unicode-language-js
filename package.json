@@ -1,11 +1,13 @@
 {
-  "name": "speakeasy",
+  "name": "@typefounders/speakeasy",
   "version": "1.0.0",
   "description": "A JavaScript port of Typekit's Ruby Speakeasy library",
-  "main": "index.js",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "scripts": {
     "test": "ts-mocha test/*.ts",
-    "update": "ts-node src/update-data.ts"
+    "update": "ts-node src/update-data.ts",
+    "prepublish": "tsc"
   },
   "author": "Bram Stein <bram@thetypefounders.com>",
   "license": "Apache-2.0",

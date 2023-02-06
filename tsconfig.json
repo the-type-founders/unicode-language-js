@@ -7,6 +7,8 @@
         "target": "es2022",
         "strict": false,
         "esModuleInterop": true,
+        "declaration": true,
+        "outDir": "dist",
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
         "moduleResolution": "node",
@@ -14,6 +16,10 @@
     },
     "include": [
         "./src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
     ],
     "ts-node": {"esm": true}
 

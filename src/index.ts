@@ -1,4 +1,4 @@
-import data from '../data.json';
+import data from '../data.json' assert { type: "json" };
 
 interface Match {
   tag: string;

@@ -1,6 +1,6 @@
 {
   "name": "@typefounders/speakeasy",
-  "version": "1.2.2",
+  "version": "1.3.0",
   "description": "A JavaScript port of Typekit's Ruby Speakeasy library",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",

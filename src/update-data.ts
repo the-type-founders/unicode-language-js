@@ -1,4 +1,3 @@
-import { download, extract } from 'gitly';
 import { readdir, readFile, writeFile } from 'fs/promises';
 import { join } from 'path';
 import { load, DEFAULT_SCHEMA, Type } from 'js-yaml';
@@ -12,20 +11,15 @@ const range = new Type('!ruby/range', {
 });
 
 const schema = DEFAULT_SCHEMA.extend([range]);
-
-const SPEAKEASY_REPOSITORY_URL = 'typekit/speakeasy';
-const TMP_DIR = '/tmp/speakeasy';
+const DIR = './speakeasy';
 
 async function fetch() {
-  // Download the speakeasy repository and extract it to a temporary directory
-  const archive = await download(SPEAKEASY_REPOSITORY_URL);
-  await extract(archive, TMP_DIR);
-  const files = await readdir(join(TMP_DIR, 'data'));
+  const files = await readdir(join(DIR, 'data'));
 
   // Read the files and parse them as YAML
   const data = await Promise.all(
     files.map(async (file) => {
-      const content = await readFile(join(TMP_DIR, 'data', file), 'utf8');
+      const content = await readFile(join(DIR, 'data', file), 'utf8');
       const language: Record<string, any> = load(content, { schema });
       const tag = file.replace('.yml', '');
 

@@ -1,5 +1,5 @@
 {
-  "name": "@typefounders/unicode-language-js",
+  "name": "@typefounders/unicode-language",
   "version": "2.0.1",
   "description": "Detection of languages from Unicode code points",
   "main": "dist/src/index.js",

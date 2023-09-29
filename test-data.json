@@ -1,0 +1,21 @@
+[
+  { "tag": "t1", "codepoints": [[1, 3]], "name": "test1", "native": "test1" },
+  {
+    "tag": "t2",
+    "codepoints": [[4, 6]],
+    "name": "test2",
+    "native": "test2"
+  },
+  {
+    "tag": "t3",
+    "codepoints": [[7, 9]],
+    "name": "test3",
+    "native": "test3"
+  },
+  {
+    "tag": "t4",
+    "codepoints": [[8, 8]],
+    "name": "test4",
+    "native": "test4"
+  }
+]

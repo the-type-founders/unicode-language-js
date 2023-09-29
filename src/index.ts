@@ -1,4 +1,11 @@
-import data from '../data.json' assert { type: "json" };
+let data = null;
+
+if ((process.env.NODE_ENV = 'test')) {
+  data = (await import('../test-data.json', { assert: { type: 'json' } }))
+    .default;
+} else {
+  data = (await import('../data.json', { assert: { type: 'json' } })).default;
+}
 
 interface Match {
   tag: string;
@@ -65,5 +72,10 @@ function detect(
 
   return result;
 }
+
+export const names = new Map(languages.map(({ tag, name }) => [tag, name]));
+export const nativeNames = new Map(
+  languages.map(({ tag, native }) => [tag, native])
+);
 
 export default detect;

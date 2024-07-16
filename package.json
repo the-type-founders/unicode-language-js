@@ -1,13 +1,14 @@
 {
-  "name": "@typefounders/unicode-language",
-  "version": "2.0.1",
-  "description": "Detection of languages from Unicode code points",
+  "name": "@thetypefounders/unicode-language",
+  "version": "2.1.0",
+  "description": "Detection of languages from Unicode codepoints",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
   "type": "module",
   "scripts": {
+    "check": "echo",
     "test": "ts-mocha -n loader=ts-node/esm -p tsconfig.json test/*.ts",
-    "update": "ts-node src/update-data.ts",
+    "update": "npx tsx src/update.ts && prettier . --check --write",
     "prepare": "tsc"
   },
   "author": "Bram Stein <bram@thetypefounders.com>",
@@ -17,13 +18,15 @@
     "@types/js-yaml": "^4.0.6",
     "@types/mocha": "^10.0.2",
     "@types/node": "^20.7.1",
-    "ts-mocha": "^10.0.0",
     "chai": "^4.3.10",
     "js-yaml": "^4.1.0",
     "mocha": "^10.2.0",
+    "prettier": "^3.3.3",
     "ts-loader": "^9.4.4",
+    "ts-mocha": "^10.0.0",
     "ts-node": "^10.9.1",
     "tslib": "^2.6.2",
+    "tsx": "^4.16.2",
     "typescript": "^5.2.2"
   }
 }
